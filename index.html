@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Birthday Surprise 💗</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:wght@300;500&display=swap" rel="stylesheet">
+
+<style>
+
+body{
+margin:0;
+font-family:'Poppins', sans-serif;
+background:linear-gradient(to bottom,#ffe6f0,#ffffff);
+color:#ff4da6;
+text-align:center;
+overflow-x:hidden;
+}
+
+/* Sections */
+
+section{
+min-height:100vh;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+padding:40px;
+opacity:0;
+transform:translateY(50px);
+transition:1s;
+}
+
+section.show{
+opacity:1;
+transform:translateY(0);
+}
+
+/* Tap screen */
+
+#start{
+position:fixed;
+width:100%;
+height:100%;
+background:#ffb6d9;
+display:flex;
+justify-content:center;
+align-items:center;
+font-family:'Pacifico', cursive;
+font-size:28px;
+z-index:10;
+cursor:pointer;
+}
+
+/* Countdown centered */
+
+#countdown{
+position:fixed;
+top:50%;
+left:50%;
+transform:translate(-50%,-50%);
+font-size:120px;
+display:none;
+z-index:9;
+text-shadow:0 0 20px pink;
+}
+
+/* Birthday */
+
+#birthday{
+display:none;
+}
+
+.bday{
+font-family:'Pacifico', cursive;
+font-size:50px;
+text-shadow:0 0 15px pink;
+}
+
+.scroll-text{
+font-size:18px;
+color:#ff85c1;
+margin-top:10px;
+}
+
+/* POLAROID GALLERY (NO CAPTION) */
+
+.gallery{
+display:flex;
+flex-wrap:wrap;
+justify-content:center;
+gap:20px;
+}
+
+.polaroid{
+background:white;
+padding:10px;
+border-radius:12px;
+box-shadow:0 10px 20px rgba(0,0,0,0.2);
+transform:rotate(-5deg);
+transition:0.4s;
+}
+
+.polaroid:nth-child(even){
+transform:rotate(5deg);
+}
+
+.polaroid:hover{
+transform:scale(1.1);
+}
+
+.polaroid img{
+width:200px;
+height:200px;
+object-fit:cover;
+border-radius:10px;
+}
+
+/* Message */
+
+.message{
+max-width:600px;
+font-size:20px;
+background:white;
+padding:25px;
+border-radius:20px;
+}
+
+/* Timeline */
+
+.timeline{
+display:flex;
+flex-direction:column;
+align-items:center;
+}
+
+.timeline img{
+width:100%;
+max-width:250px;
+height:auto;
+border-radius:15px;
+margin:20px 0;
+}
+
+/* Hearts */
+
+.heart{
+position:fixed;
+top:-10px;
+color:#ff4da6;
+animation:fall linear forwards;
+}
+
+@keyframes fall{
+to{
+transform:translateY(100vh);
+opacity:0;
+}
+}
+
+/* Mobile */
+
+@media (max-width:600px){
+
+#countdown{
+font-size:90px;
+}
+
+.bday{
+font-size:36px;
+}
+
+.gallery{
+flex-direction:column;
+align-items:center;
+}
+
+.polaroid img{
+width:160px;
+height:160px;
+}
+
+.message{
+font-size:18px;
+padding:20px;
+}
+
+section{
+padding:20px;
+}
+
+.timeline img{
+max-width:180px;
+}
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div id="start">💗 Tap to unlock something special 💗</div>
+
+<audio id="music" loop>
+<source src="music.mp3" type="audio/mpeg">
+</audio>
+
+<div id="countdown">5</div>
+
+<section id="birthday">
+<h1 class="bday">Happy Birthday 💗</h1>
+<p class="scroll-text">Scroll to discover your surprise ↓</p>
+</section>
+
+<section>
+<h1>Sometimes You & sometimes Me & You 💗</h1>
+
+<div class="gallery">
+
+<div class="polaroid"><img src="photo1.jpg"></div>
+<div class="polaroid"><img src="photo2.jpg"></div>
+<div class="polaroid"><img src="photo3.jpg"></div>
+<div class="polaroid"><img src="photo4.jpg"></div>
+<div class="polaroid"><img src="photo5.jpg"></div>
+<div class="polaroid"><img src="photo6.jpg"></div>
+
+</div>
+
+</section>
+
+<section>
+
+<h1>A Message For You 💌</h1>
+
+<p class="message">
+Dear Amrutavarshini S R ,<br><br>
+Happy Birthday to you . You make every moment special and every memory unforgettable.
+I'm really lucky to have you in my life 💗 . U know I maybe not a that good friend but to me Ur the best thing that ever happened to me in my life . U are my favourite sister . There hasn't been a day in my life that I haven't thought about you . You are a girl who is beautiful , kind , funny and all good characters in one !. I always want you to be happy and never wished bad for you . You are a girl who has been there in ups and importantly in my downs . I have faced betrayals by friends but I'm damn sure thT you won't do it to me 1 Right? I want you to suceed in life and I will enjoy ur success more than U do . As a sister I have lots of love in my heart and I want you to live a life where u don't think what others say ok? Stay happy . I'm always there!! School has ended the golden life is going to turn Iron do keep in touch plss. This is a small gift from mee . Hope U'll like it! <br><br>
+Happy Birthday ❤️
+</p>
+
+</section>
+
+<section>
+
+<h1>Our Story 💗</h1>
+
+<div class="timeline">
+
+<p>That secret Party ❤️</p>
+<img src="memory1.jpg">
+
+<p>The time when we enjoyed the most🎀</p>
+<img src="memory2.jpg">
+
+<p>The trip we'll never forget 💝</p>
+<img src="memory3.jpg">
+
+</div>
+
+</section>
+
+<script>
+
+/* Tap to start */
+
+document.getElementById("start").onclick=function(){
+this.style.display="none";
+document.getElementById("music").play();
+startCountdown();
+};
+
+/* Countdown */
+
+function startCountdown(){
+let countdown=document.getElementById("countdown");
+countdown.style.display="block";
+
+let num=5;
+
+let interval=setInterval(()=>{
+num--;
+countdown.innerText=num;
+
+if(num==0){
+clearInterval(interval);
+countdown.style.display="none";
+document.getElementById("birthday").style.display="block";
+}
+},1000);
+}
+
+/* Hearts */
+
+function createHeart(){
+let heart=document.createElement("div");
+heart.className="heart";
+heart.innerHTML="❤";
+
+heart.style.left=Math.random()*100+"vw";
+heart.style.animationDuration=(Math.random()*3+2)+"s";
+
+document.body.appendChild(heart);
+
+setTimeout(()=>heart.remove(),5000);
+}
+
+setInterval(createHeart,200);
+
+/* Scroll animation */
+
+window.addEventListener("scroll",()=>{
+document.querySelectorAll("section").forEach(sec=>{
+let top=sec.getBoundingClientRect().top;
+
+if(top<window.innerHeight-100){
+sec.classList.add("show");
+}
+});
+});
+
+</script>
+
+</body>
+</html>
